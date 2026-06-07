@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Risk Reviews · Safety First</title>
+  <meta name="description" content="Everyday and adventurous decisions, each scored with the 3-star system and ending in a concrete action plan." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <svg class="shield" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="sfg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#34d399"/><stop offset="1" stop-color="#5b9bff"/></linearGradient></defs><path d="M24 3 L41 9 V23 C41 34 33 42 24 45 C15 42 7 34 7 23 V9 Z" fill="url(#sfg)"/><path d="M16 24 L22 30 L33 18" stroke="#06281c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <span>Safety First<small>Count the odds. Keep the joy.</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="ratings.html">The 3-Star System</a>
+        <a href="blog.html">Risk Reviews</a>
+        <a href="index.html#follow">Follow</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:24px">
+      <div class="wrap">
+        <span class="eyebrow">Risk reviews</span>
+        <h1 style="font-size:clamp(2rem,4.5vw,3rem)">Real decisions, scored honestly.</h1>
+        <p class="lede">Each review runs one activity through the 3-star system, explains the verdict, and ends with an action plan you can use today.</p>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top:12px">
+      <div class="wrap">
+        <div id="blog-index" class="cards"><!-- rendered by app.js --></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>© <span data-year></span> Safety First — a personal project about smarter risk.</div>
+      <div class="foot-links">
+        <a href="philosophy.html">Philosophy</a>
+        <a href="ratings.html">3-Star System</a>
+        <a href="blog.html">Risk Reviews</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/posts.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

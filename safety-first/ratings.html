@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The 3-Star System · Safety First</title>
+  <meta name="description" content="Score any activity on Benefit, Raw Risk and Mitigation — ten stars each — and get an instant, consistent verdict." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <svg class="shield" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="sfg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#34d399"/><stop offset="1" stop-color="#5b9bff"/></linearGradient></defs><path d="M24 3 L41 9 V23 C41 34 33 42 24 45 C15 42 7 34 7 23 V9 Z" fill="url(#sfg)"/><path d="M16 24 L22 30 L33 18" stroke="#06281c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <span>Safety First<small>Count the odds. Keep the joy.</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="ratings.html">The 3-Star System</a>
+        <a href="blog.html">Risk Reviews</a>
+        <a href="index.html#follow">Follow</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:24px">
+      <div class="wrap">
+        <span class="eyebrow">The system</span>
+        <h1 style="font-size:clamp(2rem,4.5vw,3rem)">Three metrics. Ten stars. One verdict.</h1>
+        <p class="lede">Gut feeling is a bad accountant. Score any decision on these three numbers and the same rule grades it every time.</p>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top:12px">
+      <div class="wrap">
+        <div class="three">
+          <div class="metric-card">
+            <span class="num">METRIC 01</span>
+            <h3>★ Benefit</h3>
+            <p>The genuine value, joy or utility you get. Be ruthless — comfort, habit and "it's faster" usually score low.</p>
+            <div class="scale"><span>1 · nothing real</span><span>10 · life-enriching</span></div>
+          </div>
+          <div class="metric-card">
+            <span class="num">METRIC 02</span>
+            <h3>★ Raw Risk</h3>
+            <p>Severity × likelihood of the worst realistic outcome, <em>before</em> you protect yourself. Irreversible outcomes score high.</p>
+            <div class="scale"><span>1 · trivial</span><span>10 · catastrophic</span></div>
+          </div>
+          <div class="metric-card">
+            <span class="num">METRIC 03</span>
+            <h3>★ Mitigation</h3>
+            <p>How much of that danger you can actually remove with knowledge, gear, skill and discipline.</p>
+            <div class="scale"><span>1 · powerless</span><span>10 · fully in control</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Score a decision</h2>
+          <p>Drag the sliders. The verdict, residual danger and recommendation update live — try the seatbelt (1 / 8 / 1) versus a trained dive (8 / 7 / 9).</p>
+        </div>
+        <div id="calculator" class="calc">
+          <div class="calc-controls">
+            <div class="slider-group">
+              <div class="slider-label"><span>★ Benefit</span><span class="v" id="val-benefit">5</span></div>
+              <p>What you genuinely gain.</p>
+              <input type="range" id="in-benefit" min="1" max="10" step="1" value="5" />
+            </div>
+            <div class="slider-group">
+              <div class="slider-label"><span>★ Raw Risk</span><span class="v" id="val-risk">5</span></div>
+              <p>Worst realistic outcome, unprotected.</p>
+              <input type="range" id="in-risk" min="1" max="10" step="1" value="5" />
+            </div>
+            <div class="slider-group">
+              <div class="slider-label"><span>★ Mitigation</span><span class="v" id="val-mitigation">5</span></div>
+              <p>How much danger you can buy down.</p>
+              <input type="range" id="in-mitigation" min="1" max="10" step="1" value="5" />
+            </div>
+          </div>
+          <div id="calc-output"><!-- risk card rendered by app.js --></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top:0">
+      <div class="wrap prose">
+        <h2>How the verdict is calculated</h2>
+        <p>The system does two small bits of arithmetic, then sorts the result into a category. No black box:</p>
+        <div class="callout">
+          <p style="margin:0 0 8px"><strong>Residual danger</strong> = Raw Risk − (0.6 × Mitigation), floored at 0.<br />
+          <em>The danger that's still there after you've done your homework.</em></p>
+          <p style="margin:0"><strong>Net deal</strong> = Benefit − Residual danger.<br />
+          <em>Is the reward actually bigger than the danger you can't remove?</em></p>
+        </div>
+        <h3>The verdict rules, in order</h3>
+        <ul>
+          <li><strong>Unnecessary Risk</strong> — Benefit ≤ 3 and Raw Risk ≥ 5. Little reward, real danger. <em>Eliminate it.</em></li>
+          <li><strong>Reckless Risk</strong> — Residual danger ≥ 7. You can't control it enough, whatever the reward. <em>Step back.</em></li>
+          <li><strong>Free Lunch</strong> — Net ≥ 5 and Raw Risk ≤ 3. Big upside, barely any danger. <em>Do it, consistently.</em></li>
+          <li><strong>Worthwhile Risk</strong> — Net ≥ 3. The reward clearly beats the danger you can't remove. <em>Earn it, then enjoy it.</em></li>
+          <li><strong>Proceed With Care</strong> — everything else. It's on a knife-edge; your discipline decides.</li>
+        </ul>
+        <p>The same rule grades every post on this site, so two reviews are always comparable. It's a thinking aid, not gospel — but it makes the trade visible instead of leaving it to mood.</p>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top:0">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>See it applied</h2>
+          <p>Real decisions, scored with exactly this system, each ending in a plan.</p>
+          <a class="btn btn-primary" href="blog.html">Read the risk reviews</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>© <span data-year></span> Safety First — a personal project about smarter risk.</div>
+      <div class="foot-links">
+        <a href="philosophy.html">Philosophy</a>
+        <a href="ratings.html">3-Star System</a>
+        <a href="blog.html">Risk Reviews</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/posts.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
