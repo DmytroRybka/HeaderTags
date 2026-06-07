@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Safety First app icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#13213f"/><stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="sh" x1="120" y1="96" x2="392" y2="416" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34d399"/><stop offset="1" stop-color="#5b9bff"/>
+    </linearGradient>
+    <filter id="d" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <g filter="url(#d)" transform="translate(106 92) scale(6.45)">
+    <path d="M24 2 43 9V24C43 35.5 34.5 44 24 47 13.5 44 5 35.5 5 24V9Z" fill="url(#sh)"/>
+    <path d="M16 24 22 30.5 33 18" stroke="#06281c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
